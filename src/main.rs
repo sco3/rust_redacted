@@ -1,6 +1,7 @@
 use serde::{Serialize, Serializer};
 use serde_json;
 
+//#[derive(Serialize)]
 struct Secret {
     s_value: String,
 }
@@ -28,4 +29,9 @@ fn main() {
         s_value: "asd".to_string(),
     };
     println!("{}", serde_json::to_string(&s).unwrap());
+    
+    let s_long = Secret {
+        s_value: "asdf-1234".to_string(),
+    };
+    println! ("{}",serde_json::to_string( &s_long).unwrap());
 }
